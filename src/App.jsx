@@ -1,24 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider, createClient } from "wagmi";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+import { Nav } from "./components/Nav";
+import { Register } from "./components/Register";
+import { StrategyList } from "./components/StrategyList";
+
+import "./App.css";
+
+const client = createClient();
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Provider className="App" client={client}>
+        <Nav />
+        <Routes>
+          <Route path="/register" element={<Register />} />
+          <Route path="/" element={<StrategyList />} />
+        </Routes>
+      </Provider>
+    </BrowserRouter>
   );
 }
 

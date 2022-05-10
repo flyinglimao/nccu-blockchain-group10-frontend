@@ -17,11 +17,9 @@ import {
   Grid,
   Link,
   Button,
-  Modal,
   Dialog,
   DialogTitle,
   DialogContent,
-  DialogContentText,
   DialogActions,
 } from "@mui/material";
 import { KeyboardArrowUp, KeyboardArrowDown } from "@mui/icons-material";

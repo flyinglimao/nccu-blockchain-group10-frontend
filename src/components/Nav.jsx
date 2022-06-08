@@ -1,5 +1,5 @@
 import { Link as RouterLink } from "react-router-dom";
-import { Link, Toolbar, Box, AppBar, Button } from "@mui/material";
+import { Link, Toolbar, Box, AppBar } from "@mui/material";
 import { Wallet } from "./Wallet";
 
 export function Nav() {
@@ -17,9 +17,6 @@ export function Nav() {
             Enexco
           </Link>
           <div>
-            <Button component={RouterLink} variant="inherit" to="/register">
-              Register
-            </Button>
             <Wallet />
           </div>
         </Toolbar>

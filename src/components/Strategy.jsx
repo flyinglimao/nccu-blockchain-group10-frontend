@@ -82,13 +82,15 @@ export function Strategy(props) {
   const [stopLossError, setStopLossError] = useState("");
 
   useEffect(() => {
-    setStopLoss(
-      ethers.utils.formatUnits(
-        strategy.stopLoss,
-        props.info.investTokenDecimals
-      )
-    );
-    setStopLossReward(ethers.utils.formatUnits(strategy.stopLossReward, 18));
+    if (strategy.stopLoss !== "Loading")
+      setStopLoss(
+        ethers.utils.formatUnits(
+          strategy.stopLoss,
+          props.info.investTokenDecimals
+        )
+      );
+    if (strategy.stopLossReward !== "Loading")
+      setStopLossReward(ethers.utils.formatUnits(strategy.stopLossReward, 18));
   }, [
     props.info.investTokenDecimals,
     strategy.stopLoss,
